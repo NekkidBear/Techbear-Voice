@@ -1,0 +1,7 @@
+[tool.pylint.messages_control]
+disable = ["C0301", "C0116", "C0115", "C0114"]
+
+[tool.mypy]
+[[tool.mypy.overrides]]
+module = ["markdown.*", "soundfile.*", "qwen_tts.*"]
+ignore_missing_imports = true

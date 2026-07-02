@@ -15,7 +15,7 @@ from qwen_tts import Qwen3TTSModel
 
 
 def markdown_to_text(markdown_text: str) -> str:
-    html = markdown(markdown_text, output_format="html5")
+    html = markdown(markdown_text, output_format="html")
     soup = BeautifulSoup(html, "html.parser")
     return " ".join(soup.stripped_strings)
 
@@ -66,7 +66,7 @@ def build_args() -> argparse.Namespace:
     parser.add_argument("--attn-implementation",
                         help="Attention implementation override")
     parser.add_argument("--format", default=None,
-                        help="Output audio format (wav, flac, mp3)")
+                        help="Output audio format supported by libsndfile (wav, flac, ogg); mp3 is not supported")
     parser.add_argument("--max-new-tokens", type=int, default=None,
                         help="Optional max_new_tokens for generation")
     return parser.parse_args()
@@ -154,7 +154,7 @@ def main() -> None:
         )
 
     audio = wavs[0] if isinstance(wavs, (list, tuple)) else wavs
-    sf.write(str(output_path), audio, sr)
+    sf.write(str(output_path), audio, sr, format=output_format.upper())
     print(f"Saved speech to {output_path}")
 
 

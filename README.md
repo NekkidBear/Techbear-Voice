@@ -15,9 +15,11 @@ No separate repo clone needed — `qwen-tts` installs straight from PyPI.
    ```
 
 2. Copy `.env.example` to `.env` and adjust if needed:
+
    ```bash
    cp .env.example .env
    ```
+
    Defaults are already set for Mac: `DEVICE=mps` (Apple Silicon GPU),
    `DTYPE=float16`, `ATTN_IMPLEMENTATION=sdpa`. Don't set `DEVICE=cuda:0` or
    `ATTN_IMPLEMENTATION=flash_attention_2` — those are NVIDIA-only and will

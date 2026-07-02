@@ -10,7 +10,7 @@ _Here we are again._
 _Another day, another digital disaster waiting to happen._
 
 _(Beat. Side-eye tone)_  
-_Someone somewhere just clicked “remind me later” on a system update for the fourth year in a row._  
+_Someone somewhere just clicked "remind me later" on a system update for the fourth year in a row._  
 _And I felt it…_  
 _…in my spine._
 
@@ -23,18 +23,18 @@ _in the next building over._
 
 _(Switch to warm growl, Harvey Fierstein-style)_  
 _But bless her little heart—she means well._  
-_I told her to “save it to the cloud” and she started lookin’ up._  
+_I told her to "save it to the cloud" and she started lookin' up._  
 _Poor thing thought Jesus was gonna handle her spreadsheet._
 
 _(Whispers conspiratorially, Southern Belle with a secret)_  
-_And don’t even ask me what I found in the browser history of the church secretary’s laptop…_  
-_Let’s just say…_  
-_it was less “Blessed Assurance”_  
-_and more “OnlyFans with a coupon code.”_
+_And don't even ask me what I found in the browser history of the church secretary's laptop…_  
+_Let's just say…_  
+_it was less "Blessed Assurance"_  
+_and more "OnlyFans with a coupon code."_
 
 _(Quick snap, Paul Lynde zing)_  
-_Anyway\!_  
-_TechBear’s here, darlings._  
+_Anyway!_  
+_TechBear's here, darlings._  
 _Your digital disaster response unit._  
 _The patron saint of half-charged batteries and mystery pop-ups._
 
@@ -44,212 +44,212 @@ _Update your drivers._
 _Unclench your jaw._  
 _And if your printer starts growling,_  
 _remember:_  
-_it’s not possessed._  
-_It’s just in draft mode._
+_it's not possessed._  
+_It's just in draft mode._
 
 _Now then—_  
-_Let’s plug in, power up, and pray nobody’s set their Wi-Fi password to “password123” again._  
-_Because TechBear is on call, sugar—and this furball don’t troubleshoot in silence._
+_Let's plug in, power up, and pray nobody's set their Wi-Fi password to "password123" again._  
+_Because TechBear is on call, sugar—and this furball don't troubleshoot in silence._
 
 _(Bright, warm tone)_
 
-**Helloooo, my glorious little technocubs\!**
+**Helloooo, my glorious little technocubs!**
 
-(_Draw this out like you're entering a room with flair_)
+_(Draw this out like you're entering a room with flair)_
 
 Your fabulous technology uncle, TechBear, is here with a public service announcement:
 
-**_(Beat. Small shift to knowing sincerity)_**
+_(Beat. Small shift to knowing sincerity)_
 
-**It’s time to stop living in fear … of your own devices.**
+**It's time to stop living in fear … of your own devices.**
 
-_(Pause)_  
-**You’re not alone.**
+_(Pause)_
+**You're not alone.**
 
-_(Dry, knowing beat)_  
-And I’ve got the **box of mystery cables** to prove it.
+_(Dry, knowing beat)_
+And I've got the **box of mystery cables** to prove it.
 
-_(Playful curiosity)_  
+_(Playful curiosity)_
 Why do they call me TechBear?
 
-_(Dry sarcasm)_  
-Well, honey... maybe it’s because I’m a **bear**—  
-Who’s also an **allegedly** certified IT specialist.
+_(Dry sarcasm)_
+Well, honey... maybe it's because I'm a **bear**—
+Who's also an **allegedly** certified IT specialist.
 
 **Allegedly.** _Humph._
 
-I passed all the CompTIA certification courses—  
+I passed all the CompTIA certification courses—
 **Aced** them, in fact.
 
-But my diploma got “lost in the mail.”
+But my diploma got "lost in the mail."
 
-_(Beat)_  
-I thought the dean would’ve forgotten about The Incident by now...
+_(Beat)_
+I thought the dean would've forgotten about The Incident by now...
 
-But noooo.  
-He’s _still_ bitter I hacked his email.
+But noooo.
+He's _still_ bitter I hacked his email.
 
-_(Innocent protest)_  
-It was just to set up the smart coffee maker  
-in the faculty break room\!
+_(Innocent protest)_
+It was just to set up the smart coffee maker
+in the faculty break room!
 
-_(Dramatic pause)_  
-See—  
-The original email was supposed to be an automated welcome message.  
-New faculty hires.  
-Schedules.  
-A link to set up university accounts.  
+_(Dramatic pause)_
+See—
+The original email was supposed to be an automated welcome message.
+New faculty hires.
+Schedules.
+A link to set up university accounts.
 Real boring stuff.
 
-Instead—  
-Thanks to a... slight misconfiguration—  
+Instead—
+Thanks to a... slight misconfiguration—
 It went out to **everyone.**
 
-During finals week.  
-Subject line:  
-**“Brewing the Perfect Cup of Java.”**
+During finals week.
+Subject line:
+**"Brewing the Perfect Cup of Java."**
 
-With a picture of me.  
+With a picture of me.
 In nothing but a barista apron.
 
-_(Angry, rapid-fire)_  
-The dean blamed me for the chaos.  
-Said it distracted everyone\!  
+_(Angry, rapid-fire)_
+The dean blamed me for the chaos.
+Said it distracted everyone!
 
-It caused an email storm so massive—  
+It caused an email storm so massive—
 It **crashed the server.**
 
-Students couldn’t upload their exams or access their grades.  
+Students couldn't upload their exams or access their grades.
 He accused me of sabotage.
 
-He threatened to withhold my diploma  
-And cancel my work-study contract early\!
+He threatened to withhold my diploma
+And cancel my work-study contract early!
 
 ---
 
-_(Matter-of-fact)_  
-I had to hack _his_ email again  
-just to prove it was a **system error.**  
+_(Matter-of-fact)_
+I had to hack _his_ email again
+just to prove it was a **system error.**
 Not some elaborate scheme.
 
-<	ahem>
+_(ahem)_
 
 ---
 
-_(Shift tone – casual)_  
-Anyway\!
+_(Shift tone – casual)_
+Anyway!
 
-I’ve worked with start-ups.  
-Schools.  
+I've worked with start-ups.
+Schools.
 Haunted libraries...
 
-And one contract I **deeply regret**:  
+And one contract I **deeply regret**:
 On-call IT for Dr. Frank N. Furter.
 
 ---
 
-_(Low, deadpan)_  
-They’d drag me out during thunderstorms—  
-Because the network dropped  
-in the middle of some “big experiment.”
+_(Low, deadpan)_
+They'd drag me out during thunderstorms—
+Because the network dropped
+in the middle of some "big experiment."
 
-I’m in the corner, fixing the router.  
-Meanwhile, the boss is strutting around in lingerie—  
+I'm in the corner, fixing the router.
+Meanwhile, the boss is strutting around in lingerie—
 Singing to a musclebound himbo in a fish tank.
 
 Wrapped in bandages.
 
 ---
 
-I just had to plug in the router.  
+I just had to plug in the router.
 **Upper management**, am I right?
 
 ---
 
-_(Quick eye-roll tone)_  
-At least he didn’t treat me like his last IT guy.
+_(Quick eye-roll tone)_
+At least he didn't treat me like his last IT guy.
 
 Poor Eddie.
 
 _(Shudder)_
 
-(Deadpan, then building into theatrical)  
-After that contract, I promised myself:  
-“No more mad scientists. No more fish tanks. No more corsets in the server room.”
+_(Deadpan, then building into theatrical)_
+After that contract, I promised myself:
+"No more mad scientists. No more fish tanks. No more corsets in the server room."
 
-(Beat. Sighs, then leans in with dry nostalgia)  
-And then—  
+_(Beat. Sighs, then leans in with dry nostalgia)_
+And then—
 Picture it: Silicon Valley, 2015…
 
 ---
 
-_(Melodramatic nostalgia)_  
-Picture it: Silicon Valley. 2015\.
+_(Melodramatic nostalgia)_
+Picture it: Silicon Valley. 2015.
 
-I walk into what they call a “server room.”
+I walk into what they call a "server room."
 
-It’s...  
-The corner stall of the ladies’ room.
+It's...
+The corner stall of the ladies' room.
 
 ---
 
-The server?  
+The server?
 Balanced on pizza boxes.
 
-Cables?  
+Cables?
 More tangled than my love life after three martinis.
 
-Running hotter than my temper  
-when someone says:  
-**“Have you tried turning it off and on again?”**  
-—in a bad Irish accent.  
+Running hotter than my temper
+when someone says:
+**"Have you tried turning it off and on again?"**
+—in a bad Irish accent.
 For the 18th time.
 
 ---
 
-_(Cutting punchline)_  
-And your laptop fans?  
+_(Cutting punchline)_
+And your laptop fans?
 **Wheezing like Varla Jean Merman trying on a new girdle.**
 
 ---
 
-_(Gleeful frustration)_  
-Oh, the things I’ve seen, sweetie\!  
+_(Gleeful frustration)_
+Oh, the things I've seen, sweetie!
 
-People storing important documents—  
+People storing important documents—
 **in the Recycle Bin.**
 
-Family members giving away security answers  
-like they’re playing a Facebook game.
+Family members giving away security answers
+like they're playing a Facebook game.
 
-Jim-Bob duct-taping his router  
-to a ceiling fan  
-for “better signal coverage.”
+Jim-Bob duct-taping his router
+to a ceiling fan
+for "better signal coverage."
 
 ---
 
-Entire **dust bunny civilizations**  
-holding elections  
+Entire **dust bunny civilizations**
+holding elections
 inside a power supply.
 
 ---
 
-_(Confident, warm)_  
-But that’s where TechBear comes in.
+_(Confident, warm)_
+But that's where TechBear comes in.
 
-To keep your tech running—  
+To keep your tech running—
 **As smoothly as a drag queen on wheels at Pride.**
 
-With just enough glitter  
-to make it **fun**,  
-**fabulous**,  
+With just enough glitter
+to make it **fun**,
+**fabulous**,
 and **functional**.
 
 ---
 
-_(Closing wink, gentle smile)_  
-So follow **Ask TechBear**  
+_(Closing wink, gentle smile)_
+So follow **Ask TechBear**
 for your weekly dose of tech advice:
 
-**Hot. Helpful. Fuzzy.**  
+**Hot. Helpful. Fuzzy.**
 With a side of sass.
