@@ -1,0 +1,6 @@
+qwen-tts>=0.1.0
+python-dotenv>=1.0.0
+markdown>=3.4.0
+beautifulsoup4>=4.12.2
+soundfile>=0.12.1
+torch>=2.0.0

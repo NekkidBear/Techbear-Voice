@@ -1,0 +1,11 @@
+# Local Qwen3-TTS workspace environment variables
+MODEL_ID=Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice
+LANGUAGE=English
+SPEAKER=Ryan
+INSTRUCT=Middle-aged male voice, mid-American accent with a slight Southern warmth. Resonant and slightly gravelly, with mild vocal fry. Nasal, theatrical delivery — campy and sly, but grounded by genuine technical authority and warmth. Measured speaking pace. Sarcastic edge with a kind undertone. More dry wit than exuberance.
+
+# Apple Silicon / Mac settings
+DEVICE=mps
+DTYPE=float32
+ATTN_IMPLEMENTATION=sdpa
+AUDIO_FORMAT=wav

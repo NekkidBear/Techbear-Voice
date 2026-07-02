@@ -1,0 +1,7 @@
+node_modules
+dist
+.env
+output
+.mypy_cache
+.venv
+__pycache__
