@@ -1,0 +1,3 @@
+_(Beat. Sighs, then leans in with dry nostalgia)_
+And then—
+Picture it: Silicon Valley, 2015…

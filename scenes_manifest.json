@@ -1,0 +1,176 @@
+[
+  {
+    "scene": 1,
+    "file": "scene01_dry-slow-regal-like.md",
+    "direction": "Dry, slow, regal — like Bea Arthur about to deliver a roast",
+    "wav": "scene01.wav"
+  },
+  {
+    "scene": 2,
+    "file": "scene02_beat-side-eye-tone.md",
+    "direction": "Beat. Side-eye tone",
+    "wav": "scene02.wav"
+  },
+  {
+    "scene": 3,
+    "file": "scene03_gently-panicked-c-3po.md",
+    "direction": "Gently panicked, C-3PO voice creeps in",
+    "wav": "scene03.wav"
+  },
+  {
+    "scene": 4,
+    "file": "scene04_switch-to-warm-growl.md",
+    "direction": "Switch to warm growl, Harvey Fierstein-style",
+    "wav": "scene04.wav"
+  },
+  {
+    "scene": 5,
+    "file": "scene05_whispers-conspiratorially-southern-belle.md",
+    "direction": "Whispers conspiratorially, Southern Belle with a secret",
+    "wav": "scene05.wav"
+  },
+  {
+    "scene": 6,
+    "file": "scene06_quick-snap-paul-lynde.md",
+    "direction": "Quick snap, Paul Lynde zing",
+    "wav": "scene06.wav"
+  },
+  {
+    "scene": 7,
+    "file": "scene07_confident-warm.md",
+    "direction": "Confident, warm",
+    "wav": "scene07.wav"
+  },
+  {
+    "scene": 8,
+    "file": "scene08_bright-warm-tone.md",
+    "direction": "Bright, warm tone",
+    "wav": "scene08.wav"
+  },
+  {
+    "scene": 9,
+    "file": "scene09_draw-this-out-like.md",
+    "direction": "Draw this out like you're entering a room with flair",
+    "wav": "scene09.wav"
+  },
+  {
+    "scene": 10,
+    "file": "scene10_beat-small-shift-to.md",
+    "direction": "Beat. Small shift to knowing sincerity",
+    "wav": "scene10.wav"
+  },
+  {
+    "scene": 11,
+    "file": "scene11_pause.md",
+    "direction": "Pause",
+    "wav": "scene11.wav"
+  },
+  {
+    "scene": 12,
+    "file": "scene12_dry-knowing-beat.md",
+    "direction": "Dry, knowing beat",
+    "wav": "scene12.wav"
+  },
+  {
+    "scene": 13,
+    "file": "scene13_playful-curiosity.md",
+    "direction": "Playful curiosity",
+    "wav": "scene13.wav"
+  },
+  {
+    "scene": 14,
+    "file": "scene14_dry-sarcasm.md",
+    "direction": "Dry sarcasm",
+    "wav": "scene14.wav"
+  },
+  {
+    "scene": 15,
+    "file": "scene15_beat.md",
+    "direction": "Beat",
+    "wav": "scene15.wav"
+  },
+  {
+    "scene": 16,
+    "file": "scene16_innocent-protest.md",
+    "direction": "Innocent protest",
+    "wav": "scene16.wav"
+  },
+  {
+    "scene": 17,
+    "file": "scene17_dramatic-pause.md",
+    "direction": "Dramatic pause",
+    "wav": "scene17.wav"
+  },
+  {
+    "scene": 18,
+    "file": "scene18_angry-rapid-fire.md",
+    "direction": "Angry, rapid-fire",
+    "wav": "scene18.wav"
+  },
+  {
+    "scene": 19,
+    "file": "scene19_matter-of-fact.md",
+    "direction": "Matter-of-fact",
+    "wav": "scene19.wav"
+  },
+  {
+    "scene": 20,
+    "file": "scene20_shift-tone-casual.md",
+    "direction": "Shift tone – casual",
+    "wav": "scene20.wav"
+  },
+  {
+    "scene": 21,
+    "file": "scene21_low-deadpan.md",
+    "direction": "Low, deadpan",
+    "wav": "scene21.wav"
+  },
+  {
+    "scene": 22,
+    "file": "scene22_quick-eye-roll-tone.md",
+    "direction": "Quick eye-roll tone",
+    "wav": "scene22.wav"
+  },
+  {
+    "scene": 23,
+    "file": "scene23_deadpan-then-building-into.md",
+    "direction": "Deadpan, then building into theatrical",
+    "wav": "scene23.wav"
+  },
+  {
+    "scene": 24,
+    "file": "scene24_beat-sighs-then-leans.md",
+    "direction": "Beat. Sighs, then leans in with dry nostalgia",
+    "wav": "scene24.wav"
+  },
+  {
+    "scene": 25,
+    "file": "scene25_melodramatic-nostalgia.md",
+    "direction": "Melodramatic nostalgia",
+    "wav": "scene25.wav"
+  },
+  {
+    "scene": 26,
+    "file": "scene26_cutting-punchline.md",
+    "direction": "Cutting punchline",
+    "wav": "scene26.wav"
+  },
+  {
+    "scene": 27,
+    "file": "scene27_gleeful-frustration.md",
+    "direction": "Gleeful frustration",
+    "wav": "scene27.wav"
+  },
+  {
+    "scene": 28,
+    "file": "scene28_confident-warm.md",
+    "direction": "Confident, warm",
+    "wav": "scene28.wav"
+  },
+  {
+    "scene": 29,
+    "file": "scene29_closing-wink-gentle-smile.md",
+    "direction": "Closing wink, gentle smile",
+    "wav": "scene29.wav"
+  }
+]
