@@ -1,0 +1,32 @@
+[
+  {
+    "file": "scene01_dry_regal.md",
+    "out_stem": "scene01_dry_regal",
+    "instruct_suffix": "For this line, deliver dry, slow, and regal — like Bea Arthur about to deliver a roast. Deadpan pacing, long pauses between phrases."
+  },
+  {
+    "file": "scene02_gently_panicked.md",
+    "out_stem": "scene02_gently_panicked",
+    "instruct_suffix": "For this line, shift to gently flustered and anxious, C-3PO-style energy creeping in — faster cadence, slightly higher pitch tension."
+  },
+  {
+    "file": "scene03_warm_growl.md",
+    "out_stem": "scene03_warm_growl",
+    "instruct_suffix": "For this line, drop into a warm, gravelly growl, Harvey Fierstein-style — affectionate and knowing, slower and huskier than the base voice."
+  },
+  {
+    "file": "scene04_conspiratorial_whisper.md",
+    "out_stem": "scene04_conspiratorial_whisper",
+    "instruct_suffix": "For this line, deliver as a hushed, conspiratorial whisper — leaning in close, playful secrecy, slightly breathy."
+  },
+  {
+    "file": "scene05_quick_snap.md",
+    "out_stem": "scene05_quick_snap",
+    "instruct_suffix": "For this line, deliver quick, snappy, and arch — Paul Lynde zing energy, rapid-fire with a sudden punchline lift at the end."
+  },
+  {
+    "file": "scene06_confident_warm.md",
+    "out_stem": "scene06_confident_warm",
+    "instruct_suffix": "For this line, deliver warm, confident, and reassuring — steady pace, embracing tone, settling the audience."
+  }
+]
