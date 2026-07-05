@@ -1,0 +1,11 @@
+MODEL_ID=Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign
+LANGUAGE=English
+# SPEAKER=Ryan   # unused under VoiceDesign; kept for quick revert to CustomVoice
+INSTRUCT="Middle-aged male voice, low contralto-to-baritone register, chest-heavy and resonant, rough smoker-worn rasp with noticeable vocal fry. Brassy, glamorous stage-diva delivery, larger than life and utterly confident. Wide comedic swing within a single line — dry, deadpan drawl snapping suddenly into a big, over-the-top take, like a comedian milking a punchline, complete with sudden gasps and exaggerated vocal double-takes. Quick, arch one-liners with a sharp pitch lift on the punchline and a brief dramatic pause after. Underneath the glamour, a plainspoken, heartfelt warmth when reassuring. Sarcastic but affectionate — roasts the situation, never the listener."
+
+# Machine-local settings -- REQUIRED, no safe default across hardware.
+# Copy this file to .env and set these for your own machine before running.
+DEVICE=REPLACE_ME        # e.g. mps (Apple Silicon), cuda:0 (Nvidia GPU), cpu
+DTYPE=REPLACE_ME         # e.g. float32 (mps/cpu), bfloat16 (cuda)
+ATTN_IMPLEMENTATION=REPLACE_ME   # e.g. sdpa (mps/cpu), eager or flash_attention_2 (cuda)
+AUDIO_FORMAT=wav
