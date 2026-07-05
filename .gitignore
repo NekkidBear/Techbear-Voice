@@ -5,3 +5,12 @@ output
 .mypy_cache
 .venv
 __pycache__
+# differential text files
+*diff*.txt
+*.diff
+
+
+# generated audio renders
+*.wav
+
+.DS_Store
