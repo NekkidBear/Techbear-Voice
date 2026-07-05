@@ -1,7 +1,26 @@
+# MODEL_ID is now a FALLBACK only -- render_batch.py's --mode flag
+# (custom/design/clone) takes precedence and is the recommended way to
+# switch models per-run without editing this file. Only used if neither
+# --mode nor --model is passed at the command line.
 MODEL_ID=Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign
 LANGUAGE=English
-# SPEAKER=Ryan   # unused under VoiceDesign; kept for quick revert to CustomVoice
+
+# SPEAKER: used only in CustomVoice mode (--mode custom). Commented out
+# since VoiceDesign/Base modes ignore it; uncomment for quick CustomVoice
+# comparisons via --mode custom without needing to also pass --speaker.
+# SPEAKER=Ryan
+
+# INSTRUCT: used by CustomVoice and VoiceDesign modes only (ignored by
+# clone mode, which derives voice character from --ref-audio instead).
 INSTRUCT="Middle-aged male voice, low contralto-to-baritone register, chest-heavy and resonant, rough smoker-worn rasp with noticeable vocal fry. Brassy, glamorous stage-diva delivery, larger than life and utterly confident. Wide comedic swing within a single line — dry, deadpan drawl snapping suddenly into a big, over-the-top take, like a comedian milking a punchline, complete with sudden gasps and exaggerated vocal double-takes. Quick, arch one-liners with a sharp pitch lift on the punchline and a brief dramatic pause after. Underneath the glamour, a plainspoken, heartfelt warmth when reassuring. Sarcastic but affectionate — roasts the situation, never the listener."
+
+# REF_AUDIO / REF_TEXT_FILE: used only in clone mode (--mode clone).
+# REF_AUDIO points to a reference wav (mono, >=24kHz, 3-15s of clean
+# speech). REF_TEXT_FILE points to a plain-text transcript matching that
+# audio exactly, word for word. Commented out until a reference clip is
+# chosen and finalized.
+# REF_AUDIO=docs/voice_reference/techbear_ref.wav
+# REF_TEXT_FILE=docs/voice_reference/techbear_ref.txt
 
 # Machine-local settings -- REQUIRED, no safe default across hardware.
 # Copy this file to .env and set these for your own machine before running.

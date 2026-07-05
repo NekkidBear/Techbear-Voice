@@ -13,23 +13,49 @@ from run_markdown_tts.py rather than reimplementing them, so behavior
 stays identical to the per-scene script. Run this from the repo root,
 next to run_markdown_tts.py, so the import resolves.
 
-Usage (matches run_test_scenes.sh):
+MODE SELECTION:
+Rather than editing .env's MODEL_ID every time you want to switch between
+CustomVoice, VoiceDesign, and Base (clone), use --mode as a shortcut:
+
+    --mode custom   -> Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice (needs --speaker)
+    --mode design   -> Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign
+    --mode clone    -> Qwen/Qwen3-TTS-12Hz-1.7B-Base (needs --ref-audio + --ref-text/--ref-text-file)
+
+--model still works as an explicit override/escape hatch if you need a
+model id --mode doesn't cover (e.g. the 0.6B variants). .env's MODEL_ID
+is only consulted if neither --mode nor --model is given, so you're never
+forced to edit .env just to A/B between modes.
+
+Usage (matches run_test_scenes.sh, CustomVoice):
     python render_batch.py \
         --scene-dir docs/test_scenes \
         --out-dir output/voice_test \
         --manifest test_scenes_manifest.json \
-        --instruct "$BASE_VOICE" \
+        --mode custom --speaker Ryan \
+        --instruct "$INSTRUCT" \
         --max-new-tokens 400 \
         --takes 2
 
-Usage (matches run_full_monologue.sh):
+Usage (VoiceDesign):
     python render_batch.py \
-        --scene-dir docs/monologue_scenes \
-        --out-dir output/monologue \
-        --manifest scenes_manifest.json \
-        --instruct "$BASE_VOICE" \
-        --max-new-tokens 1000 \
-        --takes 1
+        --scene-dir docs/test_scenes \
+        --out-dir output/voice_test \
+        --manifest test_scenes_manifest.json \
+        --mode design \
+        --instruct "$INSTRUCT" \
+        --max-new-tokens 400 \
+        --takes 2
+
+Usage (Base / voice clone):
+    python render_batch.py \
+        --scene-dir docs/test_scenes \
+        --out-dir output/voice_test \
+        --manifest test_scenes_manifest.json \
+        --mode clone \
+        --ref-audio docs/voice_reference/techbear_ref.wav \
+        --ref-text-file docs/voice_reference/techbear_ref.txt \
+        --max-new-tokens 400 \
+        --takes 2
 
 Without --manifest, renders every scene*.md file in --scene-dir,
 alphabetically, using its filename stem as the output name.
@@ -48,6 +74,14 @@ from dotenv import load_dotenv
 from qwen_tts import Qwen3TTSModel
 from run_markdown_tts import extract_stage_directions, markdown_to_text, parse_dtype
 
+# Shortcut names -> actual Qwen3-TTS model ids. Update here if you move to
+# a different size (e.g. 0.6B) or a newer checkpoint tag.
+MODE_MODEL_IDS = {
+    "custom": "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+    "design": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "clone": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+}
+
 
 def build_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -61,12 +95,21 @@ def build_args() -> argparse.Namespace:
              "Without this, every scene*.md in --scene-dir is rendered, alphabetically, "
              "using its filename stem as out_stem.",
     )
-    parser.add_argument("--instruct", default="", help="Base instruct string (e.g. BASE_VOICE)")
+    parser.add_argument(
+        "--mode",
+        choices=sorted(MODE_MODEL_IDS.keys()),
+        help="Shortcut for MODEL_ID: custom, design, or clone. "
+             "Takes precedence over --model and .env's MODEL_ID.",
+    )
+    parser.add_argument("--model", help="Explicit MODEL_ID override (escape hatch beyond --mode)")
+    parser.add_argument("--instruct", default="", help="Base instruct string (CustomVoice/VoiceDesign)")
     parser.add_argument("--takes", type=int, default=1, help="Number of takes to render per scene")
     parser.add_argument("--max-new-tokens", type=int, default=None)
-    parser.add_argument("--model", help="Overrides MODEL_ID")
     parser.add_argument("--language", help="Overrides LANGUAGE")
-    parser.add_argument("--speaker", help="Overrides SPEAKER")
+    parser.add_argument("--speaker", help="Overrides SPEAKER (CustomVoice only)")
+    parser.add_argument("--ref-audio", help="Path to reference audio for voice cloning (clone mode only)")
+    parser.add_argument("--ref-text", help="Transcript of --ref-audio (clone mode only)")
+    parser.add_argument("--ref-text-file", help="Path to a file containing the --ref-audio transcript")
     parser.add_argument("--device", help="Overrides DEVICE")
     parser.add_argument("--dtype", help="Overrides DTYPE")
     parser.add_argument("--attn-implementation", help="Overrides ATTN_IMPLEMENTATION")
@@ -96,22 +139,60 @@ def load_manifest(manifest_path: str, scene_dir: Path) -> list[dict]:
     ]
 
 
+def resolve_model_id(args: argparse.Namespace) -> str:
+    """--mode wins if given, then --model, then .env's MODEL_ID.
+    Keeps .env purely as a fallback default rather than something that
+    has to be edited every time you switch between comparison modes."""
+    if args.mode:
+        return MODE_MODEL_IDS[args.mode]
+    if args.model:
+        return args.model
+    env_model_id = os.getenv("MODEL_ID")
+    if env_model_id:
+        return env_model_id
+    raise SystemExit(
+        "No model specified. Use --mode {custom,design,clone}, --model <id>, "
+        "or set MODEL_ID in .env."
+    )
+
+
+def resolve_ref_text(args: argparse.Namespace) -> str | None:
+    if args.ref_text:
+        return args.ref_text
+    if args.ref_text_file:
+        return Path(args.ref_text_file).read_text(encoding="utf-8").strip()
+    env_ref_text_file = os.getenv("REF_TEXT_FILE")
+    if env_ref_text_file:
+        return Path(env_ref_text_file).read_text(encoding="utf-8").strip()
+    return os.getenv("REF_TEXT")
+
+
 def main() -> None:
     load_dotenv()
     args = build_args()
 
-    model_id = args.model or os.getenv("MODEL_ID")
-    if not model_id:
-        raise SystemExit("MODEL_ID is required either in .env or via --model.")
+    model_id = resolve_model_id(args)
 
     language = args.language or os.getenv("LANGUAGE", "English")
     speaker = args.speaker or os.getenv("SPEAKER", "Ryan")
+    ref_audio = args.ref_audio or os.getenv("REF_AUDIO")
+    ref_text = resolve_ref_text(args)
     device = args.device or os.getenv(
         "DEVICE", "mps" if torch.backends.mps.is_available() else "cpu")
     dtype = parse_dtype(args.dtype or os.getenv("DTYPE", "float32"))
     attn_implementation = args.attn_implementation or os.getenv(
         "ATTN_IMPLEMENTATION", "sdpa" if device == "mps" else "eager")
     output_format = args.format or os.getenv("AUDIO_FORMAT", "wav")
+
+    # Fail fast on missing mode-specific requirements BEFORE loading the
+    # multi-GB model, not partway through a 29-scene batch.
+    if "CustomVoice" in model_id and not speaker:
+        raise SystemExit("CustomVoice models require --speaker or SPEAKER in .env.")
+    if "Base" in model_id and (not ref_audio or not ref_text):
+        raise SystemExit(
+            "Base (clone) models require --ref-audio and --ref-text (or --ref-text-file), "
+            "or REF_AUDIO/REF_TEXT(_FILE) in .env."
+        )
 
     scene_dir = Path(args.scene_dir).expanduser().resolve()
     out_dir = Path(args.out_dir).expanduser().resolve()
@@ -175,10 +256,18 @@ def main() -> None:
                     instruct=merged_instruct,
                     max_new_tokens=args.max_new_tokens,
                 )
+            elif "Base" in model_id:
+                wavs, sr = tts.generate_voice_clone(
+                    text=text,
+                    language=language,
+                    ref_audio=ref_audio,
+                    ref_text=ref_text,
+                    max_new_tokens=args.max_new_tokens,
+                )
             else:
                 raise SystemExit(
-                    "Base models require a voice clone prompt and are not supported here. "
-                    "Use a CustomVoice or VoiceDesign model id."
+                    f"Unrecognized model type in MODEL_ID ({model_id}). "
+                    "Expected CustomVoice, VoiceDesign, or Base in the model id."
                 )
 
             audio = wavs[0] if isinstance(wavs, (list, tuple)) else wavs
