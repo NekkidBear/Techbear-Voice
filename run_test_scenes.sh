@@ -38,10 +38,12 @@ if ! command -v python3 >/dev/null 2>&1; then
   exit 1
 fi
 
-# Base voice identity — see base_voice.sh for the full rationale. Kept
-# in one shared file (rather than duplicated per script) specifically
-# because the two copies had already drifted out of sync once.
-source "$(dirname "${BASH_SOURCE[0]}")/base_voice.sh"
+# Base voice identity, sourced from .env's INSTRUCT rather than a
+# separate base_voice.sh copy -- the two had already drifted out of
+# sync once when they were kept in separate files.
+set -a
+source "$(dirname "${BASH_SOURCE[0]}")/.env"
+set +a
 
 # Caps runaway generation. generate_custom_voice() defaults to
 # max_new_tokens=2048 when unset, and sampling (do_sample=True,
@@ -60,6 +62,6 @@ python3 render_batch.py \
   --scene-dir docs/test_scenes \
   --out-dir output/voice_test \
   --manifest test_scenes_manifest.json \
-  --instruct "${BASE_VOICE}" \
+  --instruct "${INSTRUCT}" \
   --max-new-tokens "${MAX_NEW_TOKENS}" \
   --takes "${TAKES}"
