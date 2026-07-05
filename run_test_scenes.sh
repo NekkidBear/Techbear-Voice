@@ -1,4 +1,13 @@
 #!/usr/bin/env bash
+# Guard against `source ./run_test_scenes.sh`: sourcing runs this in your
+# current shell process rather than a subshell, so any failure below
+# (combined with `set -e`) would exit YOUR terminal session, not just this
+# script. Run it as `./run_test_scenes.sh` instead.
+if [[ "${BASH_SOURCE[0]}" != "${0}" ]]; then
+  echo "Don't source this script -- run it instead: ./run_test_scenes.sh" >&2
+  return 1 2>/dev/null || exit 1
+fi
+
 # TechBear voice dial-in test — renders 6 short scenes, one per vocal register.
 # Loads the model ONCE via render_batch.py and reuses it for all 12 renders
 # (6 scenes x 2 takes), instead of shelling out to run_markdown_tts.py per

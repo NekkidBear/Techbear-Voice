@@ -1,4 +1,13 @@
 #!/usr/bin/env bash
+# Guard against `source ./run_full_monologue.sh`: sourcing runs this in
+# your current shell process rather than a subshell, so any failure below
+# (combined with `set -e`) would exit YOUR terminal session, not just this
+# script. Run it as `./run_full_monologue.sh` instead.
+if [[ "${BASH_SOURCE[0]}" != "${0}" ]]; then
+  echo "Don't source this script -- run it instead: ./run_full_monologue.sh" >&2
+  return 1 2>/dev/null || exit 1
+fi
+
 # Renders the full TechBear social intro monologue as 29 separate scene
 # clips, one per stage-direction beat, then (optionally) stitches them
 # into a single wav. Loads the model ONCE via render_batch.py and reuses
