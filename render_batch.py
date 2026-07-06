@@ -26,6 +26,12 @@ model id --mode doesn't cover (e.g. the 0.6B variants). .env's MODEL_ID
 is only consulted if neither --mode nor --model is given, so you're never
 forced to edit .env just to A/B between modes.
 
+SINGLE-SCENE TESTING:
+Use --only <out_stem> to render just one scene from a manifest/scene-dir
+instead of the whole batch -- useful for spot-checking a mode or a fix
+before committing to a full run. The model still only loads once either
+way; --only just filters which scenes get looped over afterward.
+
 Usage (matches run_test_scenes.sh, CustomVoice):
     python render_batch.py \
         --scene-dir docs/test_scenes \
@@ -56,6 +62,17 @@ Usage (Base / voice clone):
         --ref-text-file docs/voice_reference/techbear_ref.txt \
         --max-new-tokens 400 \
         --takes 2
+
+Usage (single scene from the full monologue, e.g. to spot-check before
+committing to a 29-scene run):
+    python render_batch.py \
+        --scene-dir docs/monologue_scenes \
+        --out-dir output/monologue \
+        --manifest scenes_manifest.json \
+        --mode clone \
+        --max-new-tokens 1000 \
+        --takes 1 \
+        --only scene01
 
 Without --manifest, renders every scene*.md file in --scene-dir,
 alphabetically, using its filename stem as the output name.
@@ -94,6 +111,12 @@ def build_args() -> argparse.Namespace:
         help="Optional JSON manifest: list of {file, out_stem?, instruct_suffix?}. "
              "Without this, every scene*.md in --scene-dir is rendered, alphabetically, "
              "using its filename stem as out_stem.",
+    )
+    parser.add_argument(
+        "--only",
+        help="Render only the manifest entry (or scene*.md file) whose out_stem "
+             "matches this value, instead of the whole batch. Useful for "
+             "spot-checking one scene before committing to a full run.",
     )
     parser.add_argument(
         "--mode",
@@ -201,6 +224,13 @@ def main() -> None:
     scenes = load_manifest(args.manifest, scene_dir)
     if not scenes:
         raise SystemExit(f"No scenes found in {scene_dir} (and no manifest given).")
+
+    if args.only:
+        scenes = [s for s in scenes if s["out_stem"] == args.only]
+        if not scenes:
+            raise SystemExit(
+                f"No scene with out_stem '{args.only}' found in manifest/scene-dir."
+            )
 
     if attn_implementation and attn_implementation.lower() in ("flash_attention_2", "flash_attn_2", "flashattn2"):
         if importlib.util.find_spec("flash_attn") is None:

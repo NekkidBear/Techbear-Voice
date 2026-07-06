@@ -25,6 +25,12 @@ fi
 # to guide tone: ...", reused here from run_markdown_tts.py) does exactly
 # what you want, scene by scene, without hand-written notes per beat.
 #
+# MODE: set explicitly below rather than relying on .env's MODEL_ID, since
+# .env's MODEL_ID is meant as a fallback default and gets left on whatever
+# was last used for ad-hoc comparison testing. A 29-scene render is
+# expensive enough that "which mode did this actually run in" should
+# never be a guess.
+#
 # Run from the repo root, with .venv activated:
 #   chmod +x run_full_monologue.sh
 #   ./run_full_monologue.sh
@@ -55,6 +61,12 @@ set -a
 source "$(dirname "${BASH_SOURCE[0]}")/.env"
 set +a
 
+# Which render_batch.py mode this run uses: custom, design, or clone.
+# Change this line (or override with MODE=design ./run_full_monologue.sh)
+# rather than editing .env -- keeps the choice visible and intentional
+# for a run this expensive.
+MODE="${MODE:-clone}"
+
 # Caps runaway generation. generate_custom_voice() defaults to
 # max_new_tokens=2048 when unset, and sampling (do_sample=True,
 # temperature=0.9) occasionally fails to hit a stop token, producing
@@ -64,23 +76,28 @@ MAX_NEW_TOKENS=1000
 
 # One take per scene by default -- doubling all 29 renders to catch what's
 # usually a one-scene problem isn't worth it. If a specific scene comes
-# back bad, re-render just that one:
+# back bad (or you want to spot-check before committing to the full 29),
+# use --only <out_stem> to render just that one scene:
 #   python3 render_batch.py --scene-dir docs/monologue_scenes \
 #     --out-dir output/monologue --manifest scenes_manifest.json \
-#     --instruct "$INSTRUCT" --max-new-tokens 1000 --takes 1
-# (render_batch.py will still reload the model once for that single call --
+#     --mode "$MODE" --instruct "$INSTRUCT" --max-new-tokens 1000 --takes 1 \
+#     --only scene01
+# (render_batch.py still loads the model once for that single call --
 # fine for a one-off retry, just not for the full 29-scene batch.)
 TAKES=1
+
+echo "Rendering full monologue in --mode ${MODE}"
 
 python3 render_batch.py \
   --scene-dir docs/monologue_scenes \
   --out-dir output/monologue \
   --manifest scenes_manifest.json \
+  --mode "${MODE}" \
   --instruct "${INSTRUCT}" \
   --max-new-tokens "${MAX_NEW_TOKENS}" \
   --takes "${TAKES}"
 
 echo ""
-echo "All 29 scenes rendered to output/monologue/"
+echo "All 29 scenes rendered to output/monologue/ (mode: ${MODE})"
 echo "To stitch into one continuous take (requires ffmpeg):"
 echo "  ./stitch_monologue.sh"
