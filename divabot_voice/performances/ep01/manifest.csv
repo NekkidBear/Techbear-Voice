@@ -1,0 +1,16 @@
+file,source,raw_s,clean_s,median_hz,note,transpose_to_233
+ep01_DB01.wav,ep01_DB01.wav,1.9,1.2,,,
+ep01_DB02.wav,ep01_DB02.wav,9.8,8.7,143.5,D3,8.4
+ep01_DB03-A.wav,ep01_DB03-A.wav,14.5,13.2,126.4,B2,10.6
+ep01_DB03-B.wav,ep01_DB03-B.wav,19.8,18.2,125.3,B2,10.7
+ep01_DB03-C.wav,ep01_DB03-C.wav,3.4,2.5,135.5,C♯3,9.4
+ep01_DB04-A.wav,ep01_DB04-A.wav,3.3,2.2,,,
+ep01_DB04-B.wav,ep01_DB04-B.wav,5.5,3.5,163.9,E3,6.1
+ep01_DB04-C.wav,ep01_DB04-C.wav,1.7,1.5,125.0,B2,10.8
+ep01_DB04-D.wav,ep01_DB04-D.wav,3.3,1.9,105.7,G♯2,13.7
+ep01_DB04-E.wav,ep01_DB04-E.wav,1.3,0.8,139.4,C♯3,8.9
+ep01_DB04-F.wav,ep01_DB04-F.wav,10.5,1.5,,,
+ep01_DB05.wav,ep01_DB05.wav,5.1,1.2,,,
+ep01_DB06-A.wav,ep01_DB06-A.wav,1.0,0.9,,,
+ep01_DB06-B.wav,ep01_DB06-B.wav,3.3,1.5,120.7,B2,11.4
+ep01_DB07.wav,ep01_DB07.wav,592.6,3.3,141.1,C♯3,8.7

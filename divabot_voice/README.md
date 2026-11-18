@@ -18,3 +18,21 @@ speaking centre A3–B3 (220–247 Hz); shortlist VCTK women whose median speaki
    → 48 kHz mono WAVs, `blend_manifest.json`, and `ATTRIBUTION.txt` (VCTK is CC BY 4.0: credit it in descriptions).
 
 Skipped automatically: p280 and p315 (known recording problems).
+
+## Your performances (conversion input)
+
+`prep_performances.py` cleans raw DivaBot takes for analysis and conversion: mono 48 kHz 24-bit, 70 Hz high-pass,
+ends trimmed, long pauses capped at 1.2 s, plus a `manifest.csv` with each clip's median pitch and the transpose to 233 Hz.
+
+    python divabot_voice/prep_performances.py --name ep01 "/path/to/storyboard/ep01/audio/clips/ep01_DB*.wav"
+
+Ep. 1's set is in `performances/ep01/` (62 s of speech from 15 clips; median ≈126 Hz, so start RVC at +11).
+Clips marked "no clear pitch" are breaths, raspberries and the like: RVC will pass them through mostly unchanged.
+
+## RVC plan
+
+- Conversion is speech-to-speech and lives here, separate from the Qwen3-TTS TechBear pipeline.
+  Optional later: run TTS output through the DivaBot model for legacy prompts and scratch tracks.
+- Training: not officially supported on Apple Silicon; use a community Mac build or a short rented-GPU session.
+- Inference (conversion) runs on the Mac. Starting settings from the brief: transpose +11, RMVPE pitch, index rate ~0.75,
+  protect ~0.33 (keeps breaths and consonants from going metallic).
