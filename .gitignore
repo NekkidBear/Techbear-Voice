@@ -14,3 +14,7 @@ __pycache__
 *.wav
 
 .DS_Store
+
+# DivaBot voice data
+datasets/
+divabot_voice/results/
